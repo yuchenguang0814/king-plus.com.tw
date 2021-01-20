@@ -1,0 +1,221 @@
+/* 轮播图 */
+.swiper-container {
+  padding-top: 100px;
+}
+.swiper-pagination span {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.swiper-container .swiper-pagination span.swiper-pagination-bullet-active {
+  background-color: #f00;
+}
+.slogan {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  z-index: 101;
+  animation-duration: 2s;
+}
+/* 新闻栏 */
+.news {
+  padding: 50px 0;
+  background: url(../images/index-news_bg.jpg) no-repeat top center;
+}
+.news .news-pic {
+  width: 44%;
+  float: left;
+  text-align: center;
+}
+.news .news-pic img {
+  box-shadow: 5px 5px 10px #ccc;
+}
+.news .news-inner {
+  width: 56%;
+  float: right;
+  padding-left: 50px;
+}
+.news .news-list li{
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+.news .news-list time {
+  width: 170px;
+  float: left;
+}
+.news .news-list time .year {
+  font-size: 24px;
+  color: #990100;
+  display: block;
+}
+.news .news-list time .mon {
+  font-size: 60px;
+}
+.news .news-list time .mon i {
+  font-size: 36px;
+  font-style: normal;
+}
+.news .news-list .news-data {
+  margin-left: 170px;
+  border-bottom: #999 1px solid;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-size: 18px;
+  color: #666;
+}
+.news .news-data .news-tit {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  word-break: break-all; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1; 
+  display: -webkit-box; 
+  -webkit-box-orient: vertical;
+}
+.news .news-data .news-info {
+  font-size: 18px;
+  color: #666;
+  padding: 5px 0;
+}
+.news .news-list li:hover {
+  transform: translateX(20px);
+  color: #990100;
+}
+.news .news-list li:hover .news-data {
+  border-bottom-color: #990100;
+}
+.news .news-list li:hover .news-tit{
+  color: #990100;
+}
+.news .news-list li:hover .news-info{
+  color: #990100;
+}
+.more {
+  text-align: center;
+  margin-top: 10px;
+}
+.more a {
+  font-size: 16px;
+  background: #235789;
+  color: #fff;
+  padding: 10px 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+}
+.more a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #990100;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.more a:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52,1.64,.37,.66);
+  transition-timing-function: cubic-bezier(0.52,1.64,.37,.66);
+}
+
+a:active, a:hover {
+    outline-width: 0;
+}
+/* 图片栏 */
+.pic li {
+  width: calc(100% / 3);
+  float: left;
+  opacity: 0.5;
+}
+/* 关于我们 */
+.about {
+  padding: 80px 0;
+  background: url(../images/index-about_bg.jpg) no-repeat top center;
+}
+.about .about-info {
+  margin: 0 3%;
+  padding: 0;
+  width: 44%;
+  float: left;
+}
+.about .about-info h2 {
+  text-align: left;
+}
+.about .about-info .text {
+  font-size: 18px;
+  line-height: 3;
+}
+.about .about-info .more {
+  text-align: left;
+}
+.about .about-pic {
+  width: 50%;
+  float: right;
+}
+/* 商品列表 */
+.product {
+  padding: 30px 0;
+  background-color: #f4f5f9;
+}
+.product .pro-list li {
+  margin: 0 0.6%;
+  width: 32%;
+  float: left;
+  text-align: center;
+}
+.product .pro-pic img{
+  transition: all .3s ease;
+}
+.product .pro-pic:hover a img {
+  transform: scale(1.1);
+}
+.product .pro-list li .pro-info {
+  max-width: 370px;
+  margin: 20px auto 0;
+  min-height: 130px;
+}
+.pro-info h3 {
+  padding: 26px 0;
+  font-size: 26px;
+}
+.pro-info span {
+  display: block;
+  font-size: 16px;
+  color: #666;
+  text-align: left;
+  padding: 0 30px;
+}
+.pro-list li .pro-more {
+  margin-top: 30px;
+  text-align: center;
+}
+.pro-list li .pro-more a {
+  font-size: 18px;
+  color: #990100;
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px #990100, 0 0 1px transparent;
+  transition: all .3s ease;
+}
+.pro-list li .pro-more a:hover {
+  box-shadow: inset 0 0 0 4px #990100, 0 0 1px transparent;
+}

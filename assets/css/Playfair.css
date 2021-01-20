@@ -1,0 +1,28 @@
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/Playfair.woff2) format('woff2')
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Playfair.woff2) format('woff2')
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Playfair.woff2) format('woff2')
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/Playfair.woff2) format('woff2')
+}
