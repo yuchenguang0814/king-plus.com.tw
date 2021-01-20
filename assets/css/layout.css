@@ -43,13 +43,34 @@ hr {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#560100', endColorstr='#e10019',GradientType=1 );
 }
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .in-tit h2{
   font-size: 48px;
   text-align: center;
   padding: 40px 0;
+}
+.delay02 {
+  animation-delay: .2s
+}
+.delay03 {
+  animation-delay: .3s
+}
+.delay04 {
+  animation-delay: .4s
+}
+.delay05 {
+  animation-delay: .5s
+}
+.delay06 {
+  animation-delay: .6s
+}
+.delay07 {
+  animation-delay: .7s
+}
+.delay08 {
+  animation-delay: .8s
 }
 /* 页面头部 */
 header {
@@ -102,7 +123,7 @@ nav ul li {
   text-align: center;
 }
 .main-nav li {
-  font-size: 21px;
+  font-size: 20px;
   margin: 0 10px;
   position: relative;
 }
@@ -164,10 +185,11 @@ nav ul li {
 nav .language {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -5px;
+  animation-delay: 1s;
 }
 .language li {
-  margin: 0
+  margin: 0;
 }
 .language li a {
   font-size: 16px;
@@ -207,7 +229,7 @@ footer {
   background: #282828;
 }
 .footer {
-  margin: 0 20px;
+  padding: 0 20px;
 }
 .foot-left {
   width: 36%;
@@ -289,4 +311,37 @@ footer {
 }
 .foot-menu ul li.active a {
   color: #079900;
+}
+.copyright {
+  color: #666;
+  text-align: right;
+  font-size: 14px;
+  padding: 10px 30px;
+}
+.right-fix {
+  position: fixed;
+  z-index: 101;
+  right: 30px;
+  bottom: 50px;
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  display: none;
+}
+.right-fix .top {
+  background: #990100;
+  color: #fff;
+  width: 55px;
+  float: right;
+  text-align: center;
+  margin-left: 1px;
+  cursor: pointer;
+}
+.right-fix a {
+  padding: 5px 0;
+  display: inline-block;
+  font-size: 16px;
+}
+.right-fix img {
+  vertical-align: middle;
+  margin: 2px 4px;
 }

@@ -8,19 +8,19 @@
   <link rel="stylesheet" href="./assets/css/Playfair.css">
   <link rel="stylesheet" href="./assets/css/roboto.css">
   <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./assets/css/layout.css">
-  <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/share/Swiper/dist/css/swiper.min.css">
   <link rel="stylesheet" href="./assets/share/animate/animate.min.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
   <script src="./assets/share/jquery/1.10.2/jquery.min.js"></script>
   <script src="./assets/share/Swiper/dist/js/swiper.min.js"></script>
 </head>
 <body>
   <!-- 顶部导航 -->
-  <header>
-    <div class="header clearfix">
+  <header class="clearfix">
+    <div class="header container">
       <div class="logo h-left">
-        <a href="">
+        <a href="" class="animated fadeInDown">
           <img src="./assets/images/logo.png" alt="logo">
            KING-PLUS
         </a>
@@ -28,14 +28,14 @@
       <div class="h-right clearfix">
         <nav>
           <ul class="main-nav">
-            <li class="active"><a href="">首页</a></li>
-            <li class="sub-menu-parent"><a href="">关于我们</a><i class="fa fa-angle-down"></i>
+            <li class="active delay02 animated fadeInDown"><a href="">首页</a></li>
+            <li class="sub-menu-parent delay03 animated fadeInDown"><a href="">关于我们</a><i class="fa fa-angle-down"></i>
               <ul class="sub-menu">
                 <li><a>公司简介</a></li>
                 <li><a>发展历程</a></li>
               </ul>
             </li>
-            <li class="sub-menu-parent"><a href="">产品介绍</a><i class="fa fa-angle-down"></i>
+            <li class="sub-menu-parent delay04 animated fadeInDown"><a href="">产品介绍</a><i class="fa fa-angle-down"></i>
               <ul class="sub-menu">
                 <li><a>全部产品</a></li>
                 <li><a>单层系列吹膜生产线</a></li>
@@ -43,12 +43,12 @@
                 <li><a>单层系列吹膜生产线3</a></li>
               </ul>
             </li>
-            <li><a href="">新闻中心</a></li>
-            <li><a href="">视频专区</a></li>
-            <li><a href="">电子书</a></li>
-            <li><a href="">联系我们</a></li>
+            <li class="delay05 animated fadeInDown"><a href="">新闻中心</a></li>
+            <li class="delay06 animated fadeInDown"><a href="">视频专区</a></li>
+            <li class="delay07 animated fadeInDown"><a href="">电子书</a></li>
+            <li class="delay08 animated fadeInDown"><a href="">联系我们</a></li>
           </ul>
-          <div class="language">
+          <div class="language animated fadeInDown">
             <ul>
               <li class="active"><a href="">简中</a></li>
               <li><a href="">繁中</a></li>
@@ -68,7 +68,7 @@
         <div class="swiper-slide"><a href=""><img src="./assets/images/index-banner-03.jpg" alt="轮播图3"></a></div>
     </div>
     <div class="swiper-pagination"></div>
-    <div class="slogan">
+    <div class="slogan animated fadeInLeftBig">
       <img src="./assets/images/index-banner-slogan_e.png" alt="">
     </div>
   </div>
@@ -174,7 +174,7 @@
           <h2>主要产品</h2>
         </div>
         <ul class="pro-list clearfix">
-          <li>
+          <li class="delay02">
             <div class="pro-pic"><a href=""><img src="./assets/images/pro1.png" alt=""></a></div>
             <div class="pro-info">
               <h3>HDPE/LDPE经济型高速吹膜机</h3>
@@ -182,7 +182,7 @@
             </div>
             <div class="pro-more"><a href="">详细内容</a></div>
           </li>
-          <li>
+          <li class="delay03">
             <div class="pro-pic"><a href=""><img src="./assets/images/pro2.png" alt=""></a></div>
             <div class="pro-info">
               <h3>HDPE/LDPE经济型高速吹膜机</h3>
@@ -190,7 +190,7 @@
             </div>
             <div class="pro-more"><a href="">详细内容</a></div>
           </li>
-          <li>
+          <li class="delay04">
             <div class="pro-pic"><a href=""><img src="./assets/images/pro3.png" alt=""></a></div>
             <div class="pro-info">
               <h3>HDPE/LDPE经济型高速吹膜机</h3>
@@ -207,7 +207,7 @@
   <!-- 页脚 -->
   <hr>
   <footer>
-    <div class="footer clearfix">
+    <div class="footer container clearfix">
       <div class="foot-left">
         <div class="foot-logo">
           <img src="./assets/images/foot-logo.png" alt="">
@@ -260,7 +260,15 @@
       </div>
     </div>
   </footer>
+  <div class="copyright container">Copyright © 2021 HAN KING PLASTIC MACHINERY CO., LTD. All rights reserved.</div>
   <!-- 页脚结束 -->
+  <!-- 返回顶部 -->
+  <div class="right-fix">
+  	<div class="clearfix">
+			<div class="top"><a><img src="./assets/images/icon-top.png" alt="">Top</a></div>
+		</div>
+  </div>
+  <!-- 返回顶部结束 -->
   <script src="./assets/js/common.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {

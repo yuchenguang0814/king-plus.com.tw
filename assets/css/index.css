@@ -28,6 +28,7 @@
   width: 44%;
   float: left;
   text-align: center;
+  animation-duration: 2s;
 }
 .news .news-pic img {
   box-shadow: 5px 5px 10px #ccc;
@@ -36,6 +37,7 @@
   width: 56%;
   float: right;
   padding-left: 50px;
+  animation-duration: 2s;
 }
 .news .news-list li{
   margin-top: 20px;
@@ -155,6 +157,7 @@ a:active, a:hover {
   padding: 0;
   width: 44%;
   float: left;
+  animation-duration: 2s;
 }
 .about .about-info h2 {
   text-align: left;
@@ -169,6 +172,7 @@ a:active, a:hover {
 .about .about-pic {
   width: 50%;
   float: right;
+  animation-duration: 2s;
 }
 /* 商品列表 */
 .product {
