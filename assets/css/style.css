@@ -11,6 +11,9 @@
   line-height: 1.8;
   color: #666;
 }
+.section .in-tit h2 {
+  margin-top: 40px;
+}
 .section article h2 {
   color: #333;
   visibility: visible;
@@ -83,6 +86,17 @@
 }
 .product h3.series3 {
   background: #980200;
+}
+.pro-pic img {
+  box-shadow:none;
+  border: none;
+}
+.pro-list li .pro-pic {
+  max-width: 370px;
+  margin: auto;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 10px #dfdfdf;
 }
 @keyframes rotation {
   from {
@@ -179,10 +193,122 @@
   font-size: 20px;
   color: #261919;
 }
+/* 产品详情页 */
+.pro-content {
+  padding: 100px 0 0 0;
+}
+.pro-banner {
+  position: relative;
+  text-align: right;
+  padding: 50px 0;
+  background: url(../images/pro-large_bg.png) no-repeat top left;
+  animation: slide 1.5s ease;
+}
+.pro-banner h1 {
+  color: #990100;
+  font-size: 48px;
+  margin: 0;
+  padding: 15px;
+  position: absolute;
+  top: 50px;
+  left: 15px;
+}
+.pro-banner .pro-banPic {
+  padding: 0 30px;
+  animation-duration: 2s;
+}
+.pro-banner img {
+  border: none;
+  box-shadow: none;
+}
+.pro-banner .pro-menu ul {
+  list-style-type: none;
+  position: absolute;
+  left: 15px;
+  bottom: 50px;
+}
+.pro-banner .pro-menu ul li {
+  display: inline-block;
+  margin-left: -3px;
+  text-align: center;
+}
+.pro-banner .pro-menu ul li a {
+  display: block;
+  width: 100%;
+  background: #235789;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: bold;
+  word-spacing: 12px;
+}
+.pro-banner .pro-menu ul li a img {
+  display: block;
+  margin-bottom: 5px;
+}
+.pro-app {
+  padding: 80px 0;
+  background: url(../images/section_bg.jpg) repeat-x bottom;
+}
+.pro-app img {
+  border: none;
+  box-shadow: none;
+}
+.pro-app h2 {
+  color: #1a5096;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.pro-app h2 .img, .pro-app .title {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.pro-app .title {
+  text-align: left;
+  font-size: 36px;
+  letter-spacing: 36px;
+  color: #261919;
+}
+.pro-app .title span {
+  display: block;
+  font-size: 18px;
+  opacity: .5;
+  letter-spacing:normal;
+}
+.pro-app h3 {
+  max-width: 1000px;
+  line-height: 1.5;
+  margin: 20px auto 30px;
+  color: #1a5096;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+}
+.app-list ul {
+  display: flex;
+}
+.app-list li {
+  margin: 0 20px;
+  float: left;
+  flex: 1;
+}
+.app-list li img {
+  border: #ccc 1px solid;
+  margin: auto;
+}
+@-webkit-keyframes slide {
+	0% { background-position: 0 140px; opacity: 0; }
+	75% { opacity: 0.5}
+	100% { background-position: 0 0; opacity: 1; }
+}
 @media (max-width:800px) {
   /* 公司简介样式 */
   .section {
     padding: 150px 0 0 0 ;
+  }
+  .section .in-tit h2 {
+    margin: 20px 0;
   }
   .about2-left {
     width: 100%;

@@ -185,6 +185,7 @@ a:active, a:hover {
   width: 32%;
   float: left;
   text-align: center;
+  overflow: hidden;
 }
 .product .pro-pic img{
   transition: all .3s ease;

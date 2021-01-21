@@ -78,6 +78,7 @@ hr {
   font-size: 48px;
   text-align: center;
   padding: 40px 0;
+  margin: 0;
 }
 .delay02 {
   animation-delay: .2s
