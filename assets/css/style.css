@@ -1,0 +1,218 @@
+/* 其他文件样式 */
+/* 公司简介样式 */
+.section {
+  padding: 100px 100px 50px;
+}
+.section article {
+  animation-duration: 2s;
+}
+.section article p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #666;
+}
+.section article h2 {
+  color: #333;
+  visibility: visible;
+  line-height: 1.8;
+  margin: 0;
+}
+.section img {
+  box-shadow: #aaa 0px 0px 15px;
+  border: #fff 5px solid;
+}
+.section .img-center {
+  text-align: center;
+  margin: 20px 3px 20px 3px;
+}
+.about2-left {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+}
+.about2 img {
+  animation-delay: .5s;
+  animation-duration: 2s;
+}
+.section .img-right {
+  float: right;
+  margin: 0 15px 10px 30px; 
+}
+/* 发展历史 */
+.fixed-nav-bar {
+  position: fixed;
+  top: 260px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 128px;
+}
+.staticing {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rotate {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation: rotation 8s infinite linear;
+}
+.section #StaticLogoImage {
+  box-shadow: none;
+  border: none;
+}
+/* 产品中心 */
+.pro-inpro h3.series {
+  font-size: 30px;
+  padding: 10px 20px;
+  background: #079900;
+  color: #fff;
+  box-shadow: #bfbfbf 3px 3px 3px;
+  animation-duration: 2s;
+}
+.pro-inpro li {
+  animation-duration: 2s;
+}
+.product h3.series2 {
+  background: #0100ff;
+}
+.product h3.series3 {
+  background: #980200;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #E9E9E9;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+.tlcontainer {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+.tlcontainer::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: white;
+  border: 4px solid #990100;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.tl-left {
+  left: 0;
+}
+.tl-left:before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #E9E9E9;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #E9E9E9;
+}
+.tl-right {
+  left: 50%;
+}
+.tl-right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #E9E9E9;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #E9E9E9 transparent transparent;
+}
+.tl-right::after {
+  left: -10px;
+}
+.tl-content {
+  padding: 20px 30px;
+  background-color: #E9E9E9;
+  position: relative;
+  border-radius: 6px;
+}
+.content-block {
+  vertical-align: middle;
+  padding: 20px 30px;
+  background-color: #bababa;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 5px 10px #8b8b8b;
+}
+.content-block h3 {
+  text-align: center;
+  font-size: 20px;
+  color: #261919;
+}
+@media (max-width:800px) {
+  /* 公司简介样式 */
+  .section {
+    padding: 150px 0 0 0 ;
+  }
+  .about2-left {
+    width: 100%;
+    float: none;
+  }
+  .section .img-right {
+    float: none;
+    margin-left: 0;
+  }
+  /* 发展历史 */
+  .timeline {
+    padding-bottom: 20px;
+  }
+  .timeline::after {
+    display: none;
+  }
+  .tlcontainer {
+    width: 100%;
+  }
+  .tlcontainer::after {
+    display: none;
+  }
+  .tlcontainer::before {
+    display: none;
+  }
+  .tl-right {
+    left: 0;
+  }
+  .content-block {
+    margin: 20px 30px;
+    padding: 15px 0;
+  }
+}
