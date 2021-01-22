@@ -28,6 +28,7 @@ let mobile_flag = isMobile();
 $('.right-fix').click(function () {
   $('html , body').animate({scrollTop: 0},'slow');
 })
+// 判断手机端显示fixed
 if (!mobile_flag) {
   if ($(window).scrollTop() > 350) {
     $('header').addClass('lvTop')
@@ -85,6 +86,13 @@ $(document).scroll(() => {
       $('header').removeClass('lvTop')
       $('.right-fix').fadeOut(1000)
     }
+    if ($('#ban-end').length > 0 && $(window).scrollTop() >= $('#ban-end').offset().top - 100) {
+      $('.pro-nav').fadeIn();
+      $('.pro-nav').addClass('cross')
+    } else {
+      $('.pro-nav').fadeOut();
+      $('.pro-nav').removeClass('cross')
+    }
   }
   if ($('.news-pic').length > 0 && scroBottom >= $('.news-pic').offset().top) {
     $('.news-pic').addClass('animated slideInLeft')
@@ -116,6 +124,26 @@ $(document).scroll(() => {
   if ($('.pro-inpro .series3').length > 0 && scroBottom >= $('.pro-inpro .series3').offset().top) {
     $('.pro-inpro .series3').addClass('animated fadeInLeft')
     $('.pro-inpro .series3').next().find('li').addClass('animated slideInUp')
+  }
+  if ($('#ban-end').length > 0 && $(window).scrollTop() >= $('#ban-end').offset().top - 100 && mobile_flag === false) {
+    $('.pro-nav').fadeIn();
+    $('.pro-nav').addClass('cross')
+  } else if ($('#ban-end').length > 0 && $(window).scrollTop() < $('#ban-end').offset().top - 100 && mobile_flag === false) {
+    $('.pro-nav').fadeOut();
+    $('.pro-nav').removeClass('cross')
+  }
+  if ($('.pro-banner .pro-menu li').length > 0 && scroBottom >= $('.pro-banner .pro-menu li').offset().top) {
+    $('.pro-banner .pro-menu li').addClass('animated fadeInUp')
+  }
+  if ($('.pro-app h2').length > 0 && scroBottom >= $('.pro-app h2').offset().top) {
+    $('.pro-app h2').addClass('animated fadeInDown')
+    $('.pro-app h3').addClass('animated fadeInDown')
+    $('.pro-app li').addClass('animated fadeInUp')
+  }
+  if ($('.pro-spec').length > 0 && scroBottom >= $('.pro-spec').offset().top) {
+    $('.pro-spec .spec-pic').addClass('animated slideInRight')
+    $('.pro-spec h2').addClass('animated fadeInDown')
+    $('.pro-spec .spec-info').addClass('animated slideInLeft')
   }
   if (scroBottom >= $('.footer').offset().top) {
     $('.footer').addClass('animated slideInUp')

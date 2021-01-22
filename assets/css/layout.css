@@ -56,6 +56,14 @@ h3 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
 hr {
   height: 10px;
   margin: 0;
@@ -381,6 +389,7 @@ nav .language {
 .breadcrumb {
   background: #990100;
   margin: 0;
+  min-height: 50px;
 }
 .breadcrumb h2 {
   color: #fff;
@@ -527,9 +536,12 @@ footer {
   display: block;
 }
 .wap {
-  display: none;
+  display: none !important;
 }
 @media (max-width:1200px) { 
+  header .h-left {
+    width: 30%;
+  }
   .container {
     width: 100%;
     margin: 0;
@@ -557,7 +569,7 @@ footer {
     display: none;
   }
   .wap {
-    display: block;
+    display: block !important;
   }
   .in-tit h2{
     font-size: 30px;

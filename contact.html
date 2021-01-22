@@ -16,8 +16,30 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/share/jquery/1.10.2/jquery.min.js"></script>
   <script src="./assets/share/Swiper/dist/js/swiper.min.js"></script>
+  <!--验证码-->
+  <script language="javascript" type="text/javascript">
+    var code;
+    function createCode() {  //函数体
+      code = "";
+      var codeLength = 4; //验证码的长度
+      var checkCode = document.getElementById("checkCode");
+      var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+      'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+      for (var i = 0; i < codeLength; i++)
+      {
+        var charNum = Math.floor(Math.random() * 52);//设置随机产生
+        code += codeChars[charNum];
+      }
+      if (checkCode)
+      {
+        checkCode.className = "code";
+        checkCode.innerHTML = code;
+      }
+    }
+ </script>
 </head>
-<body>
+<body onload="createCode()">
   <!-- 顶部导航 -->
   <header class="clearfix">
     <div class="header container clearfix">
@@ -114,10 +136,94 @@
   </div>
   <!-- 顶部导航结束 -->
   <!-- 公司介绍 -->
-  <section class="section">
+  <section class="section contact clearfix">
     <div class="container">
       <div class="in-tit">
         <h2>联系我们</h2>
+      </div>
+      <div class="form-range clearfix">
+        <h3 class="blue">谢谢您浏览本公司网站！</h3>
+        <p>现在您只需填写下列表单，就会在第一时间内得到我们为您提供的技术谘询、技术资料、产品报价等服务。</p>
+        <h3 class="blue">( <span class="red">*</span> 为必填 )</h3>
+        <form class="cont-form" action="" method="POST">
+          <ul class="range">
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>您的姓名:</label>
+                <input class="form-control" type="text" required="required" name="您的姓名" minlength="5" maxlength="40" pattern="[a-zA-Z\- \.\,\']+">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>公司名称:</label>
+                <input class="form-control" type="text" required="required" name="公司名称" minlength="5" maxlength="40" pattern="[a-zA-Z\- \.\,\']+">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>电话:</label>
+                <input class="form-control" type="text" required="required" name="电话" minlength="7" maxlength="20" pattern="[0-9\-\+ ]+">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label">传真:</label>
+                <input class="form-control" type="text" name="传真" minlength="7" maxlength="20" pattern="[0-9\-\+ ]+">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>Email:</label>
+                <input class="form-control" type="text" required="required" name="Email" maxlength="40" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label">网站:</label>
+                <input class="form-control" type="url" name="网站" maxlength="40">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>国家:</label>
+                <input class="form-control" type="text" required="required" name="国家" minlength="3" maxlength="40" pattern="[a-zA-Z\- \.\,\']+">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label">地址:</label>
+                <input class="form-control" type="text" name="地址" minlength="10" maxlength="60">
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>留言:</label>
+                <textarea class="form-control" name="留言" required="required" style="height: 160px;" minlength="10" maxlength="500"></textarea>
+              </div>
+            </li>
+            <li>
+              <div class="form-group clearfix">
+                <label class="form-label"><strong class="req">*</strong>验证码:</label>
+                <input type="text" id="verifycode" class="form-control" required="required" name="verifycode">
+                <div class="code" id="checkCode" onclick="createCode()" ></div><a class="yz"  href="#" onclick="createCode()">看不清换一张</a>
+              </div>
+            </li>
+          </ul>
+          <div class="btn">
+            <input type="submit" value="送出" onclick="GetDom()">
+            <input type="reset" value="重填">
+          </div>
+        </form>
+      </div>
+      <div id="map-container" class="map-info clearfix">
+      </div>
+      <div class="clt">
+        <div class="clt-time">
+          <h3>服务时间：</h3>
+          <div class="clt-wek">周一至周五 8:00-17:00</div>
+          <div class="clt-tel">电话：<span class="red">+886-5-2956388</span></div>
+          <div class="clt-fax">传真：<span class="red">+886-5-2950321</span></div>
+        </div><br>
       </div>
     </div>
   </section>
@@ -187,6 +293,35 @@
   </div>
   <!-- 返回顶部结束 -->
   <!-- 页脚结束 -->
-  <script src="./assets/js/common.js"></script>
+  <scrip src="./assets/js/common.js"></scrip>
+  <script src="http://api.map.baidu.com/api?type=webgl&v=1.0&ak=AFESzB0jhTmdwl2RLH9AMGR5faVqhlIT"></script>
+  <script>
+    // 验证验证码
+    function GetDom() {
+      if (document.getElementById("verifycode").value=="") {
+        alert("验证码不能为空！");
+        createCode();//输错一次或提交一次都将会刷新一次验证码
+        return false; //结束本次会话
+      } else if (document.getElementById("verifycode").value.toUpperCase()!=code.toUpperCase()) { //toUpperCase不区分大小写
+          alert("您输入的验证码有误，请重新输入！！");
+          createCode();//读取文件
+      } else {
+        alert("成功");
+      }
+    }
+    // 创建百度地图
+    var map = new BMapGL.Map('map-container'); // 创建Map实例
+    map.centerAndZoom(new BMapGL.Point(120.693741, 27.779269), 12.8); // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true);
+    var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+    map.addControl(scaleCtrl);
+    var zoomCtrl = new BMapGL.ZoomControl();  // 添加比例尺控件
+    map.addControl(zoomCtrl);
+    var myIcon = new BMapGL.Icon("http://webmap0.bdimg.com/image/api/marker_red.png", new BMapGL.Size(23, 25));
+    var marker1 = new BMapGL.Marker(new BMapGL.Point(120.693741, 27.779269), {
+      icon: myIcon
+    });
+    map.addOverlay(marker1);
+  </script>
 </body>
 </html>

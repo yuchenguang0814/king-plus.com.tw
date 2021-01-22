@@ -194,6 +194,54 @@
   color: #261919;
 }
 /* 产品详情页 */
+.pro-nav {
+  position: fixed;
+  top: 88px;
+  width: 100%;
+  background: #235789;
+  margin: 0;
+  padding: 10px 15px;
+  z-index: -10;
+  transition: all 0.5s ease;
+  display: none;
+}
+.pro-nav.cross {
+  transform: translateY(50px);
+}
+.pro-nav h3 {
+  margin: 0;
+  padding: 0 0 0 10px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: normal;
+  float: left;
+}
+.pro-nav .pro-nav-in {
+  float: right;
+}
+.pro-nav .pro-nav-in ul {
+  list-style-type: none;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+.pro-nav .pro-nav-in ul li {
+  display: inline-block;
+  color: #fff;
+  padding: 0 10px;
+  visibility: visible;
+}
+.pro-nav .pro-nav-in ul li + li {
+  border-left: rgba(255,255,255,.8) 1px solid;
+}
+.pro-nav .pro-nav-in ul li img {
+  max-height: 40px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.pro-nav .pro-nav-in ul li a {
+  font-size: 20px;
+}
 .pro-content {
   padding: 100px 0 0 0;
 }
@@ -250,33 +298,34 @@
   padding: 80px 0;
   background: url(../images/section_bg.jpg) repeat-x bottom;
 }
-.pro-app img {
+.pro-content img {
   border: none;
   box-shadow: none;
 }
-.pro-app h2 {
+.pro-content h2 {
   color: #1a5096;
   text-align: center;
   margin-bottom: 0px;
+  animation-duration: 2s;
 }
-.pro-app h2 .img, .pro-app .title {
+.pro-content h2 .img, .pro-content .title {
   display: inline-block;
   margin-right: 10px;
   vertical-align: middle;
 }
-.pro-app .title {
+.pro-content .title {
   text-align: left;
   font-size: 36px;
   letter-spacing: 36px;
   color: #261919;
 }
-.pro-app .title span {
+.pro-content .title span {
   display: block;
   font-size: 18px;
   opacity: .5;
   letter-spacing:normal;
 }
-.pro-app h3 {
+.pro-content h3 {
   max-width: 1000px;
   line-height: 1.5;
   margin: 20px auto 30px;
@@ -297,11 +346,432 @@
   border: #ccc 1px solid;
   margin: auto;
 }
-@-webkit-keyframes slide {
+.pro-content .pro-spec h2 {
+  text-align: left;
+  padding-left: 20px;
+}
+.pro-content .pro-spec .title {
+  color: #1a5096;
+}
+.spec-pic {
+  width: 50%;
+  float: right;
+  text-align: center;
+  margin-top: -100px;
+}
+.spec-pic span {
+  color: #000;
+  font-size: 24px;
+  margin-top: 16px;
+}
+.spec-info {
+  width: 50%;
+  float: left;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.spec-info p {
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #1a5096;
+}
+.spec-info span {
+  color: #f00;
+  font-size: 18px;
+}
+.pro-spec .spec-option h2 {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.pro-spec .spec-option {
+  padding-left: 20px;
+  margin: 20px 0;
+  width: 50%;
+  float: left;
+}
+.pro-spec .spec-option li {
+  display: block;
+  position: relative;
+  width: 320px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, .5);
+  color: black;
+  line-height: 1.5em;
+  font-family: Tahoma, SimSun, "Roboto Regular", sans-serif;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 35px;
+}
+.pro-spec .spec-option li a {
+  padding: 5px;
+  display: block;
+  text-align: right;
+  text-decoration: underline;
+}
+.pro-spec .spec-option span {
+  display: block;
+  padding: 5px 0;
+  font-weight: 500;
+}
+.pro-spec .spec-option i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-left: 5px;
+  transition: all .3s;
+}
+.pro-spec .spec-option i.active {
+  background-color: #235789;
+}
+.pro-spec .spec-option i.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.pro-spec .spec-option li:hover i {
+  background-color: #ccc;
+}
+.pro-spec .spec-option li:hover a {
+  color: #079900;
+}
+.pro-spec .spec-option li:hover i.active {
+  background-color: #235789;
+}
+.pro-spec .spec-option .btn {
+  display: block;
+  background-color: #235789;
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .3s;
+}
+.pro-spec .spec-option .btn:hover {
+  background-color: #12449b;
+}
+.pro-spec {
+  position: relative;
+}
+.pro-option-desc {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  box-sizing: border-box;  
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1999;
+}
+.option-content {
+  position: fixed;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
+  bottom: 20%;
+  left: 0%;
+}
+.option-content .cont-box {
+  position: relative;
+  background-color: #fff;
+  padding: 30px;
+  width: auto;
+  max-width: 572px;
+  margin: 0 auto;
+}
+.option-content .cont-box .box-close {
+  font-size: 36px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  overflow: visible;
+  cursor: pointer;
+  right: 0px;
+  color: #333;
+  opacity: 0.65;
+}
+.option-content .cont-box .box-info strong {
+  font-size: 1.5em;
+  margin: 20px 0;
+  font-weight: 700;
+}
+.option-content .cont-box .box-info p{
+  font-size: 20px;
+  color: black;
+}
+.option-content .cont-box .box-info ul {
+  padding-left: 20px;
+}
+.option-content .cont-box .box-info ul li{
+  list-style-type: disc;
+  line-height: 1.5;
+  font-size: 20px;
+}
+@keyframes slide {
 	0% { background-position: 0 140px; opacity: 0; }
 	75% { opacity: 0.5}
 	100% { background-position: 0 0; opacity: 1; }
 }
+/* 新闻中心样式 */
+.news-section {
+  background: none;
+  animation-duration: 2s;
+}
+.news-section .news-list time .year {
+  display: inline-block;
+}
+.news-section .news-list time .mon {
+  font-size: 24px;
+  margin-left: 12px;
+  color: #990100;
+  box-sizing: inherit;
+}
+.news-section .news-list time .mon i {
+  font-size: 18px;
+}
+.news-section .news-list li {
+  background: #ececec;
+  margin-top: 1px;
+  transition: all 0.3s ease;
+  border: #eee 1px solid;
+}
+.news-section .news-list li a {
+  width: 100%;
+  display: block;
+  padding: 30px;
+}
+.news-section .news-list li:hover {
+  transform: translateX(20px);
+  background: #980200 !important;
+  color: #fff;
+}
+.news-section .news-list .news-data {
+  border: none;
+}
+.news-section .news-list .news-data {
+  margin: 0;
+  padding: 0;
+}
+.news-section .news-list li:nth-child(2n) {
+  background: #fff;
+}
+.news .news-data .news-tit {
+  margin-bottom: 0;
+}
+.news-section .news-list li:hover span {
+  color: #fff;
+}
+.news-section .news-list li:hover .news-tit {
+  color: #fff;
+}
+/* 新闻详情页 */
+.new-info {
+  padding-bottom: 50px;
+}
+.new-info h4, .new-info p{
+  line-height: 2;
+  font-size: 18px;
+}
+.new-info h4{
+  font-size: 24px;
+  border-bottom: #ccc 1px solid;
+  color: #f00;
+}
+.new-info .back {
+  text-align: right;
+}
+.new-info .back a {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  background: #980200;
+  color: #fff;
+  padding: 10px 30px 10px 50px;
+  font-size: 16px;
+  position: relative;
+}
+.new-info .back a::before {
+  content: "\f137";
+  position: absolute;
+  left: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.new-info .back a:hover::before {
+  -webkit-transform: translateX(-4px);
+  transform: translateX(-4px);
+}
+/* 视频中心样式 */
+.vid-desc ul li {
+  float: left;
+  width: 32%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.vid-desc ul li iframe {
+  width: 100%;
+  min-height: 300px;
+}
+.vid-desc .vid-title {
+  text-align: left;
+  padding: 5px;
+  font-size: 18px;
+}
+/* 电子书样式 */
+.ebook {
+  padding: 100px 20px 50px;
+}
+.ebook .ebook-list li {
+  width: 15%;
+  margin: 0 0.8% 40px;
+  float: left;
+  text-align: center;
+  animation-duration: 0.8s;
+}
+.ebook-list img {
+  display: inline-block;
+  border: #ccc 1px solid;
+  padding: 5px;
+  background: #eee;
+  border-radius: 5px;
+  box-shadow: none;
+}
+.ebook .ebook-list li:hover img {
+  border: #990200 1px solid;
+  box-shadow: inset 0px 0px 36px #990200;
+  background: #fff;
+}
+.book-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px auto;
+  text-align: center;
+}
+/* 联系我们样式 */
+.contact {
+  padding: 100px 20px 50px;
+}
+.contact * {
+  line-height: 1.6;
+  font-size: 18px;
+}
+.contact .blue {
+  color: #00f;
+}
+.contact .red {
+  color: #f00;
+}
+.form-range {
+  width: 50%;
+  float: left;
+  animation-duration: 1.4s;
+  padding: 0 30px;
+  margin-bottom: 50px;  
+  color: #666;
+}
+.cont-form .range { font-size: 16px; list-style-type: none; margin: 20px 0; padding: 0; }
+.cont-form .range li { margin-bottom: 16px; }
+.cont-form .range .form-label { display: block; float: left; width: 20%; text-align: right; padding-right: 20px; }
+.cont-form .range .form-label-v2 { display: block; float: left; width: 80%; text-align: left; padding-right: 20px; }
+.cont-form .range .form-label .req { color: #8a2626; font-weight: bold; margin-right: 4px; }
+.cont-form .range .form-control { width: 80%; background: none; border: 1px #666 solid; }
+.cont-form .range #verifycode { width: 25%; }
+.cont-form .btn { text-align: center; }
+.cont-form .btn input { background: #8a2626; border: none; color: #fff; margin: 0 20px; padding: 12px 24px; }
+.cont-form .btn input:hover { background: #e60113; }
+/*验证码*/
+.cont-form .code {
+  background-color: silver;
+  font-family:Arial; /*设置字体*/
+  font-style:initial;
+  color:brown;
+  font-size:20px;
+  border:0;
+  padding:2px 3px;
+  letter-spacing:3px;
+  font-weight:bolder;
+  width:81px;
+  height:36px;      
+  margin-left: 50%;
+  margin-top: -35px;
+}
+.cont-form .yz {
+  font-size:16px;
+  color:#288bc4;
+  margin-left: 50%;
+}
+.map-info {
+  width: 50%;
+  float: right;
+  animation-duration: 1.4s;
+  padding: 0 30px;
+  color: #666;
+  min-height: 400px;
+}
+/* 隐私权 */
+.privacy * {
+  color: #666;
+  line-height: 1.8;
+}
+/* sitempa */
+.sitemap {
+  padding: 100px 20px 50px;
+}
+.sitemap ul { padding-left: 20px; font-size: 18px; line-height: 1.5; }
+.sitemap .site-menu { margin: 0 auto 50px; }
+.sitemap .site-menu1, .sitemap .site-menu2, .sitemap .site-menu3, .sitemap .site-menu4 { width: 23%; float: left; margin: 0 1%; }
+
+.sitm-menu li { position: relative; vertical-align: top; padding-top: 20px; margin-right: 20px; white-space: normal; width: 100%; }
+.site-menu li a {	position: relative; display: block; margin: 0 0 15px; padding: 15px; font-size: 16px; font-weight: bold; line-height: 1.5; white-space: normal; color: #333; background-color: white; border: 1px solid #e5e5e5; border-top: 4px solid #95a5a6; border-radius: 5px; z-index: 1; transition: all 0.3s ease; box-shadow: #f5f5f5 3px 3px 3px; }
+.site-menu1 li a { border-top-color: #e67e22; width: auto; }
+.site-menu2 li a { border-top-color: #079900; width: auto; }
+.site-menu3 li a { border-top-color: #0100ff; width: auto; }
+.site-menu4 li a { border-top-color: #980200; width: auto; }
+.site-menu1 li:hover a { background-color: #e67e22; color: #fff; }
+.site-menu2 li:hover a, .site-menu2 li.active a { background-color: #079900; color: #fff; }
+.site-menu3 li:hover a, .site-menu3 li.active a { background-color: #0100ff; color: #fff; }
+.site-menu4 li:hover a, .site-menu4 li.active a { background-color: #980200; color: #fff; }
 @media (max-width:800px) {
   /* 公司简介样式 */
   .section {
@@ -340,5 +810,133 @@
   .content-block {
     margin: 20px 30px;
     padding: 15px 0;
+  }
+  /* 商品详情页 */
+  .pro-nav h3 {
+    float: none;
+    margin-bottom: 5px;
+    padding-left: 0;
+    text-align: center;
+  }
+  .pro-nav .pro-nav-in {
+    float: none;
+  }
+  .pro-nav .pro-nav-in ul {
+    padding-left: 0;
+    text-align: center;
+  }
+  .pro-nav .pro-nav-in ul li {
+    padding: 0 7px;
+    width: 30%;
+  }
+  .pro-nav .container {
+    padding: 0;
+  }
+  .pro-nav {
+    padding: 5px 0;
+  }
+  .pro-banner {
+    padding: 0px;
+    background: none;
+  }
+  .pro-banner h1 {
+    position: static;
+    text-align: left;
+    font-size: 24px;
+  }
+  .pro-banner .pro-banPic {
+    padding: 30px 0px;
+  }
+  .pro-banner .pro-menu ul li {
+    max-width: inherit;
+    width: 33.33%;
+    text-align: center;
+    float: left;
+    display: block;
+  }
+  .pro-banner .pro-menu ul li + li {
+    margin-left: 1px;
+  }
+  .pro-banner .pro-menu ul {
+    position: static;
+    text-align: left;
+  }
+  .pro-app {
+    padding: 30px 0;
+  }
+  .spec-pic, .spec-info {
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .spec-info p {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .pro-spec .spec-option {
+    float: none;
+    padding-left: 0;
+    width: 100%;
+  }
+  .spec-info {
+    padding-left: 0;
+  }
+  .pro-content .pro-spec h2 {
+    padding-left: 0;
+  }
+  .pro-spec .spec-option li {
+    width: 100%;
+  }
+  .pro-app .app-list ul {
+    display: block;
+    padding-left: 20px;
+  }
+  .pro-app .app-list ul li {
+    float: left;
+    width: 40%;
+    margin: 10px;
+  }
+  /* 新闻中心样式 */
+  .news-section .news-list li a {
+    padding: 20px 10px
+  }
+  .news .news-data .news-tit {
+    -webkit-line-clamp: 2;
+  }
+  /* 视频中心样式 */
+  .vid-desc ul li {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+  /* 电子书样式 */
+  .ebook .ebook-list li {
+    width: 100%;
+    float: none;
+  }
+  /* 联系我们 */
+  .form-range, .map-info {
+    width: 100%;
+    float: none;
+  }
+  .map-info {
+    min-height: 200px;
+  }
+  .cont-form .range .form-label {
+    float: none;
+    text-align: left;
+    width: 100%;
+  }
+  /* 网站地图 */
+  .sitemap .site-menu ul {
+    width: 100%;
+    padding-left: 0;
+  }
+  .sitemap .site-menu1 li {
+    margin: 0 1%;
+    width: 46%;
+    float: left;
   }
 }
