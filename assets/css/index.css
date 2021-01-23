@@ -20,6 +20,10 @@
   z-index: 101;
   animation-duration: 2s;
 }
+.swiper-pagination-bullet {
+  background-color: #ddd;
+  opacity: .8;
+}
 /* 新闻栏 */
 .news {
   padding: 50px 0;

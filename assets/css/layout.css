@@ -76,7 +76,7 @@ hr {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#560100', endColorstr='#e10019',GradientType=1 );
 }
 .display_none{
-  display:none;
+  display:none !important;
 }
 .container {
   max-width: 1440px;
@@ -108,6 +108,9 @@ hr {
 }
 .delay08 {
   animation-delay: .8s
+}
+.delay20 {
+  animation-delay: 2s
 }
 /* 页面头部 */
 header {
@@ -213,6 +216,7 @@ nav ul li {
   height: 100%;
   background: rgba(0,0,0,.3);
   pointer-events: none;
+  display: none;
 }
 .head-nav-menu .main-nav.cross {
   width: 70%;
@@ -389,7 +393,7 @@ nav .language {
 .breadcrumb {
   background: #990100;
   margin: 0;
-  min-height: 50px;
+  height: 50px;
 }
 .breadcrumb h2 {
   color: #fff;
@@ -543,9 +547,9 @@ footer {
     width: 30%;
   }
   .container {
-    width: 100%;
     margin: 0;
     padding: 0 20px;
+    overflow: hidden;
   }
   .head-nav {
     display: block;

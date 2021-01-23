@@ -11,6 +11,9 @@
   line-height: 1.8;
   color: #666;
 }
+.section .init {
+  animation-duration: .8s;
+}
 .section .in-tit h2 {
   margin-top: 40px;
 }
@@ -746,6 +749,7 @@
   float: right;
   animation-duration: 1.4s;
   padding: 0 30px;
+  margin-bottom: 50px;
   color: #666;
   min-height: 400px;
 }
@@ -928,6 +932,12 @@
     float: none;
     text-align: left;
     width: 100%;
+  }
+  .cont-form .range .form-control {
+    width: 100%;
+  }
+  .cont-form .range #verifycode {
+    width: 45%;
   }
   /* 网站地图 */
   .sitemap .site-menu ul {
